@@ -1,0 +1,10 @@
+^C:\USERS\AJAYA\ONEDRIVE\DESKTOP\FILES\PCL\BUILD-CMAKE\CMAKEFILES\11BE7B381FB96E5220B2EFFA0934E312\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ajaya/OneDrive/Desktop/Files/PCL -BC:/Users/ajaya/OneDrive/Desktop/Files/PCL/build-cmake --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/ajaya/OneDrive/Desktop/Files/PCL/build-cmake/PCL_Autonomous_Driving_Project.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

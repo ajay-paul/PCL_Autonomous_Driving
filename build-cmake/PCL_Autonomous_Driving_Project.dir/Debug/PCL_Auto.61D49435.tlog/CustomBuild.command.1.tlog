@@ -1,0 +1,10 @@
+^C:\USERS\AJAYA\ONEDRIVE\DESKTOP\FILES\PCL\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ajaya/OneDrive/Desktop/Files/PCL -BC:/Users/ajaya/OneDrive/Desktop/Files/PCL/build-cmake --check-stamp-file C:/Users/ajaya/OneDrive/Desktop/Files/PCL/build-cmake/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

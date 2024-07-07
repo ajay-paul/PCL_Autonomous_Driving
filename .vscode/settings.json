@@ -1,0 +1,9 @@
+{
+    "cmake.generator": "Ninja",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "files.associations": {
+        "iostream": "cpp",
+        "vector": "cpp"
+    },
+    "C_Cpp.intelliSenseEngine": "default"
+}

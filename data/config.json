@@ -1,0 +1,6 @@
+{
+    "voxel_grid_filter_resolution": 0.1,
+    "segmentation_threshold": 0.02,
+    "max_iterations": 1000,
+    "distance_threshold": 0.02
+}
