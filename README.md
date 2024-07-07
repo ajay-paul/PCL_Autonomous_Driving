@@ -1,80 +1,76 @@
-# PCL_Autonomous_Driving
- 
- Autonomous Driving Project
+# Autonomous Driving Project
+
 This project involves the processing of point cloud data for autonomous driving applications. The key functionalities include loading point clouds, registering point clouds, segmenting road and objects, extracting features, and classifying the data. This README provides an overview of the project structure, setup instructions, and usage guidelines.
 
-Directory Structure
 
-├── build-cmake/                  # Directory for CMake build files
-│   ├── Release/                  # Directory for Release build artifacts
-│   └── Debug/                    # Directory for Debug build artifacts
-├── data/                         # Directory for point cloud data files
-│   ├── office1.pcd               # Example point cloud file
-│   ├── office2.pcd               # Example point cloud file
-│   ├── registered.pcd            # Output file for registered point cloud
-│   ├── road.pcd                  # Output file for segmented road
-│   └── object_*.pcd              # Output files for detected objects
-├── include/                      # Header files for the project
-│   └── point_cloud_processing.h  # Header file for point cloud processing class
-├── src/                          # Source files for the project
-│   ├── main.cpp                  # Main entry point of the project
-│   └── point_cloud_processing.cpp # Implementation of point cloud processing class
-├── CMakeLists.txt                # CMake build configuration file
-└── README.md                     # This README file
+## Prerequisites
 
-Prerequisites
-- CMake version 3.10 or higher
-- vcpkg for managing dependencies
+- [CMake](https://cmake.org/) version 3.10 or higher
+- [vcpkg](https://github.com/microsoft/vcpkg) for managing dependencies
 - PCL (Point Cloud Library) installed via vcpkg
-1. Setup Instructions
-Clone the repository
 
-git clone https://github.com/yourusername/autonomous-driving-project.git
-cd autonomous-driving-project
+## Setup Instructions
 
-2. Install dependencies
+1. **Clone the repository**
 
-Ensure you have vcpkg installed and initialized. Install PCL using vcpkg:
+    ```bash
+    git clone https://github.com/yourusername/autonomous-driving-project.git
+    cd autonomous-driving-project
+    ```
 
-./vcpkg install pcl
+2. **Install dependencies**
 
-3. Configure and build the project
+    Ensure you have `vcpkg` installed and initialized. Install PCL using `vcpkg`:
 
-Create a build directory and run CMake:
+    ```bash
+    ./vcpkg install pcl
+    ```
 
-mkdir build-cmake
-cd build-cmake
-cmake .. -DCMAKE_TOOLCHAIN_FILE=path/to/vcpkg/scripts/buildsystems/vcpkg.cmake
-cmake --build . --config Release
+3. **Configure and build the project**
 
-Running the Project
+    Create a build directory and run CMake:
 
-1. Prepare your data
+    ```bash
+    mkdir build-cmake
+    cd build-cmake
+    cmake .. -DCMAKE_TOOLCHAIN_FILE=path/to/vcpkg/scripts/buildsystems/vcpkg.cmake
+    cmake --build . --config Release
+    ```
 
-Place your input PCD files (e.g., office1.pcd, office2.pcd) in the data/ directory.
+## Running the Project
 
-2. Execute the application
+1. **Prepare your data**
 
-Navigate to the build directory and run the executable:
+    Place your input PCD files (e.g., `office1.pcd`, `office2.pcd`) in the `data/` directory.
 
-cd build-cmake/Release
-./PCL_Autonomous_Driving_Project
+2. **Execute the application**
 
-Ensure the data/ directory is in the correct path relative to the executable, or update the file paths in the code accordingly.
+    Navigate to the build directory and run the executable:
 
-- Project Functionalities
-Load Point Cloud: Loads point cloud data from PCD files.
-Register Point Clouds: Aligns and merges two point clouds.
-Segment Road: Segments the road surface from the point cloud.
-Detect Objects: Detects and extracts objects from the point cloud.
-Extract Features: Computes feature descriptors for the point cloud.
-Classify Point Cloud: Classifies the point cloud data based on extracted features.
-- Example Usage
-In the main.cpp file, the following steps are performed:
+    ```bash
+    cd build-cmake/Release
+    ./PCL_Autonomous_Driving_Project
+    ```
 
-Load the source and target point clouds.
-Register the point clouds and save the registered output.
-Segment the road from the registered point cloud and save the output.
-Detect objects in the registered point cloud and save each detected object.
-Extract features from the registered and target point clouds.
-Classify the point clouds based on the extracted features.
+    Ensure the `data/` directory is in the correct path relative to the executable, or update the file paths in the code accordingly.
+
+## Project Functionalities
+
+- **Load Point Cloud**: Loads point cloud data from PCD files.
+- **Register Point Clouds**: Aligns and merges two point clouds.
+- **Segment Road**: Segments the road surface from the point cloud.
+- **Detect Objects**: Detects and extracts objects from the point cloud.
+- **Extract Features**: Computes feature descriptors for the point cloud.
+- **Classify Point Cloud**: Classifies the point cloud data based on extracted features.
+
+## Example Usage
+
+In the `main.cpp` file, the following steps are performed:
+
+1. Load the source and target point clouds.
+2. Register the point clouds and save the registered output.
+3. Segment the road from the registered point cloud and save the output.
+4. Detect objects in the registered point cloud and save each detected object.
+5. Extract features from the registered and target point clouds.
+6. Classify the point clouds based on the extracted features.
+
